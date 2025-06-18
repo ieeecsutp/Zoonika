@@ -1,0 +1,7 @@
+# Carpeta para imágenes del proyecto PetCare
+# Aquí colocaremos las imágenes de:
+# - Logo
+# - Veterinaria con perro (hero)
+# - Iconos de servicios
+# - Fotos de la galería
+# - Avatars de testimonios
