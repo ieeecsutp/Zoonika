@@ -1,0 +1,162 @@
+---
+const services = [
+	{
+		icon: "🩺",
+		title: "Consultas Generales",
+		description: "Exámenes de rutina, diagnósticos y seguimiento de la salud de tu mascota",
+		features: ["Revisiones completas", "Diagnósticos de enfermedades", "Control de peso y nutrición"]
+	},
+	{
+		icon: "🛡️",
+		title: "Vacunación",
+		description: "Programas de vacunación personalizados para proteger a tu mascota",
+		features: ["Vacunas básicas y opcionales", "Calendarios personalizados", "Certificados oficiales"]
+	},
+	{
+		icon: "🔬",
+		title: "Cirugías",
+		description: "Procedimientos quirúrgicos con tecnología avanzada y cuidado especializado",
+		features: ["Esterilizaciones", "Cirugías de emergencia", "Procedimientos especializados"]
+	},
+	{
+		icon: "💙",
+		title: "Cuidados Intensivos",
+		description: "Atención especializada para mascotas en condiciones críticas",
+		features: ["Hospitalización", "Monitoreo 24/7", "Tratamientos intensivos"]
+	},
+	{
+		icon: "🚨",
+		title: "Emergencias",
+		description: "Servicio de urgencia disponible las 24 horas del día",
+		features: ["Atención inmediata", "Disponible 24/7", "Equipo especializado"]
+	},
+	{
+		icon: "✂️",
+		title: "Peluquería",
+		description: "Servicios de estética y cuidado personal para tu mascota",
+		features: ["Baño y secado", "Corte de pelo", "Corte de uñas"]
+	}
+];
+---
+
+<section class="services-section">
+	<div class="container">
+		<h2 class="services-title">Nuestros Servicios</h2>
+		<p class="services-subtitle">Ofrecemos una amplia gama de servicios veterinarios para mantener a tu mascota saludable y feliz</p>
+		
+		<div class="services-grid">
+			{services.map((service) => (
+				<div class="service-card">
+					<div class="service-icon">{service.icon}</div>
+					<h3 class="service-title">{service.title}</h3>
+					<p class="service-description">{service.description}</p>
+					<ul class="service-features">
+						{service.features.map((feature) => (
+							<li>• {feature}</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.services-section {
+		padding: 4rem 0;
+		background: #f8f9fa;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.services-title {
+		font-size: 2.5rem;
+		text-align: center;
+		color: #17a2b8;
+		margin-bottom: 1rem;
+		font-weight: 600;
+	}
+
+	.services-subtitle {
+		text-align: center;
+		color: #6c757d;
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.service-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		border: 1px solid #e1e8ed;
+	}
+
+	.service-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+	}
+
+	.service-icon {
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+		color: #17a2b8;
+	}
+
+	.service-title {
+		font-size: 1.4rem;
+		color: #2c3e50;
+		margin-bottom: 1rem;
+		font-weight: 600;
+	}
+
+	.service-description {
+		color: #6c757d;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		font-size: 0.95rem;
+	}
+
+	.service-features {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.service-features li {
+		color: #495057;
+		margin-bottom: 0.5rem;
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+
+	@media (max-width: 768px) {
+		.services-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		
+		.service-card {
+			padding: 1.5rem;
+		}
+		
+		.services-title {
+			font-size: 2rem;
+		}
+	}
+</style>
