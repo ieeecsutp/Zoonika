@@ -1,0 +1,90 @@
+
+<header id="mainHeader" 
+        class="fixed top-0 left-0 w-full 
+                bg-transparent shadow-md px-4 py-3 
+                transition-colors duration-300 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="font-[var(--font-inter)] text-3xl font-bold">Pet<strong class="text-cyan-500">Care</strong></div>
+
+    <!-- Menú de navegación - solo visible en md+ -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-cyan-500">Inicio</a>
+      <a href="#" class="hover:text-cyan-500">Nosotros</a>
+      <a href="#services" class="hover:text-cyan-500">Servicios</a>
+      <a href="#testimonio" class="hover:text-cyan-500">Testimonio</a>
+      <a href="#" class="hover:text-cyan-500">Contacto</a>
+    </nav>
+
+    <!-- Iconos -->
+    <div class="hidden md:flex space-x-4">
+      <i class="fa-brands fa-facebook text-[1.3rem] 
+                hover:text-blue-500 transition-colors duration-200"></i>
+      <i class="fa-brands fa-whatsapp text-[1.3rem] 
+                hover:text-green-500 transition-colors duration-200"></i>
+      <i class="fa-brands fa-instagram text-[1.3rem] 
+                hover:text-fuchsia-500 transition-colors duration-200"></i>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <button
+      id="menuToggle"
+      class="md:hidden text-2xl focus:outline-none"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </button>
+  </div>
+
+  <!-- Menú desplegable móvil -->
+  <div
+    id="mobileMenu"
+    class="hidden flex-col space-y-4 mt-4 px-4 md:hidden transition-all duration-300 ease-in-out"
+  >
+    <nav class="flex flex-col space-y-2">
+      <a href="#" class="hover:text-cyan-500">Inicio</a>
+      <a href="#" class="hover:text-cyan-500">Nosotros</a>
+      <a href="#services" class="hover:text-cyan-500">Servicios</a>
+      <a href="#testimonio" class="hover:text-cyan-500">Testimonio</a>
+      <a href="#" class="hover:text-cyan-500">Contacto</a>
+    </nav>
+  </div>
+</header>
+  
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('mobileMenu');
+    const header = document.getElementById('mainHeader');
+
+    // Función para cambiar fondo del header
+    const handleScroll = () => {
+      if (window.scrollY > 10 || !menu.classList.contains('hidden')) {
+        header.classList.remove('bg-transparent');
+        header.classList.add('bg-white');
+      } else {
+        header.classList.remove('bg-white');
+        header.classList.add('bg-transparent');
+      }
+    };
+
+    // Toggle del menú móvil
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+      handleScroll(); 
+    });
+
+    // Cerrar el menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      const isClickInsideMenu = menu.contains(e.target) || toggle.contains(e.target);
+      if (!isClickInsideMenu && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        handleScroll();
+      }
+    });
+
+    // Cambia color de fondo al hacer scroll
+    window.addEventListener('scroll', handleScroll);
+  });
+</script>
