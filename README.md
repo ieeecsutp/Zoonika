@@ -124,9 +124,15 @@ Todos los comandos se ejecutan desde la raíz del proyecto:
 - ✅ **Carga Rápida** - Optimizado con Astro para máximo rendimiento
 - ✅ **Iconografía Profesional** - Font Awesome integrado
 
-## � Equipo de Desarrollo
+## 👥 Equipo de Desarrollo
 
-_[Incluir información del equipo aquí]_
+### Desarrolladores Frontend
+- **Johann Gudwig Camiloaga Cuenca** - Desarrollador
+- **Rodriguez de la Cruz Jhonny J.** - Desarrollador  
+- **Ortiz Gil Kengyo Jerdly** - Desarrollador
+
+### Diseño UX/UI
+- **Ponce de León Alfaro Melani Nicoll** - Diseñadora
 
 ---
 
